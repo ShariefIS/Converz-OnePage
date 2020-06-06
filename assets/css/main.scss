@@ -1,0 +1,299 @@
+$color-priamry: #1ecfd8;
+@keyframes center {
+    0%,
+    10% {
+        transform: translateX(-40%);
+    }
+    90%,
+    100% {
+        transform: translateX(0%);
+    }
+}
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone-xs {
+        @media only screen and (max-width: 450px) {
+            @content;
+        } //450px
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        } //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        } //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) {
+            @content;
+        } //1200px
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        } //1024px
+    }
+    @if $breakpoint == only-tab-land {
+        @media only screen and (max-width: 75.5em) and (min-width: 37.5em) {
+            @content;
+        } //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        } //1800
+    }
+    @if $breakpoint == 4k-desktop {
+        @media only screen and (min-width: 3400px) {
+            @content;
+        } //1800
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background: #212529;
+    font-size: 1rem;
+    @include respond(phone-xs) {
+        font-size: 0.8rem !important;
+    }
+}
+// CUSTOM SCROLLBAR
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $color-priamry;
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #25f4ff;
+}
+.navbar {
+    &-brand {
+        img {
+            width: 2rem;
+        }
+    }
+    &-nav {
+        .nav-item {
+            .nav-link {
+                transition: all ease-out 0.5;
+                font-weight: 600;
+
+                &.download {
+                    font-family: fantasy;
+                    font-weight: normal;
+                    color: $color-priamry !important;
+                }
+            }
+            &.active,
+            &:hover {
+                .nav-link {
+                    color: $color-priamry !important;
+                }
+            }
+        }
+    }
+}
+.collapse.show {
+    .nav-item {
+        .nav-link {
+            animation: center 2s;
+            text-align: center;
+        }
+        &.active,
+        &:hover {
+            background: #6c757d24;
+        }
+    }
+}
+section:not([id*="home"]) {
+    position: relative;
+    top: 4rem;
+    margin: 0.5rem;
+    background: white;
+    padding: 4rem 1.5rem;
+}
+#home {
+    position: relative;
+    top: 4rem;
+    background: url(/assets/images/city-building.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 92vh;
+    .heading {
+        display: flex;
+        background: black;
+        color: white;
+        font-weight: bold;
+        padding: 1rem;
+        span:nth-child(1) {
+            @include respond(phone) {
+                font-size: 2rem;
+            }
+            @include respond(only-tab-land) {
+                font-size: 3.5rem;
+            }
+            @include respond(desktop) {
+                font-size: 4rem;
+            }
+        }
+        &-video {
+            position: relative;
+            .placeholder {
+                height: 70vh;
+                width: 100%;
+                z-index: 10;
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+                .play-button {
+                    cursor: pointer;
+                    height: 10rem;
+                    filter: contrast(0.8);
+                    z-index: 5;
+                }
+                span {
+                    @include respond(phone) {
+                        width: 70vw;
+                    }
+                    @include respond(only-tab-land) {
+                        width: 40vw;
+                    }
+                    @include respond(desktop) {
+                        width: 20vw;
+                    }
+                }
+            }
+            iframe {
+                position: relative;
+                top: 0.5rem;
+                height: 60vh;
+                width: 99%;
+                left: 0.5%;
+            }
+            .explore {
+                height: 69vh;
+                width: 98%;
+                position: absolute;
+                top: 0;
+                a {
+                    z-index: 20;
+                    cursor: pointer;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+#features {
+    .list-group-item {
+        display: flex;
+        align-items: center;
+        border: none;
+        @include respond(phone) {
+            padding: 0.75rem 0.25rem !important;
+        }
+        span {
+            padding-left: 1rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .fa {
+            font-size: 1.5rem;
+            color: $color-priamry;
+            width: 1.5rem;
+        }
+    }
+    a {
+        cursor: pointer;
+        font-family: fantasy;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+}
+#visitor {
+    .list-group-item {
+        display: flex;
+        align-items: center;
+        border: none;
+        @include respond(phone) {
+            padding: 0.75rem 0.25rem !important;
+        }
+        span {
+            padding-left: 1rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .fa {
+            font-size: 1.5rem;
+            color: $color-priamry;
+            width: 1.5rem;
+        }
+    }
+    iframe {
+        width: 60vw;
+        @include respond(tab-port) {
+            width: 90vw !important;
+        }
+        height: 45vh;
+    }
+}
+#faq {
+    li div {
+        padding: 0.4rem;
+        display: flex;
+        flex-direction: column !important;
+        .fa {
+            width: 1rem;
+            font-size: 0.6rem;
+            position: relative;
+            top: -3px;
+            padding-right: 0.5rem;
+        }
+        span:nth-child(1) {
+            font-weight: bold;
+        }
+        span {
+            display: flex;
+            align-items: baseline;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+    }
+}
