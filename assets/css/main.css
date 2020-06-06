@@ -44,7 +44,7 @@ html {
 
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background: #212529;
+  background-color: #212529 !important;
   font-size: 1rem;
 }
 
@@ -76,6 +76,12 @@ body {
   background: #25f4ff;
 }
 
+.navbar a.download {
+  font-family: fantasy;
+  font-weight: normal;
+  color: #1ecfd8 !important;
+}
+
 .navbar-brand img {
   width: 2rem;
 }
@@ -86,14 +92,9 @@ body {
   font-weight: 600;
 }
 
-.navbar-nav .nav-item .nav-link.download {
-  font-family: fantasy;
-  font-weight: normal;
+.navbar-nav .nav-item .nav-link.active, .navbar-nav .nav-item .nav-link:hover {
   color: #1ecfd8 !important;
-}
-
-.navbar-nav .nav-item.active .nav-link, .navbar-nav .nav-item:hover .nav-link {
-  color: #1ecfd8 !important;
+  font-weight: bold;
 }
 
 .collapse.show .nav-item .nav-link {
