@@ -118,7 +118,7 @@ section:not([id*="home"]) {
 #home {
   position: relative;
   top: 4rem;
-  background: url(/assets/images/city-building.jpg);
+  background: url(/Converz-OnePage/assets/images/city-building.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
