@@ -166,7 +166,7 @@ section:not([id*="home"]) {
 #home {
     position: relative;
     top: 4rem;
-    background: url(/assets/images/city-building.jpg);
+    background: url(assets/images/city-building.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -418,7 +418,7 @@ section:not([id*="home"]) {
         }
     }
     .contact-us-left {
-        background-image: url(/assets/images/contact-us-left.JPG);
+        background-image: url(assets/images/contact-us-left.JPG);
         background-size: cover;
         background-repeat: no-repeat;
     }
