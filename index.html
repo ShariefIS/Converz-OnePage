@@ -36,11 +36,14 @@
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
-            <a class="nav-link download text-center" href="https://thecrew-game.ubisoft.com/" target="_blank">Download Now</a>
+            <a class="nav-link download text-center" href="https://thecrew-game.ubisoft.com/" target="_blank">Download
+                Now</a>
 
         </div>
     </nav>
-
+    <button class="btn btn-primary scroll-top" data-scroll="up" type="button">
+        <i class="fa fa-chevron-up"></i>
+    </button>
     <section id="home">
         <div class="heading flex-column text-center">
             <span>
@@ -68,6 +71,9 @@
     </section>
     <section id="features" class="flex-column">
         <h2>Live the Smart Building experience with Converz App</h2>
+        <div class="feature-background">
+            <img src="/assets/images/service-background.JPG" alt="">
+        </div>
         <div class="d-flex row">
             <ul class="list-group">
                 <li class="list-group-item">
@@ -166,17 +172,75 @@
                 <div>
                     <span> Do I need the app to invite visitors?</span>
                     <span> <i class="fa fa-circle-thin" aria-hidden="true"></i>
-                        It is best to use the invite Visitor feature on the app to pre-invite your guests and save them
-                        the issue of waiting.
-                        However, a contactless system has been introduced in the visitor lobby where the visitor can
-                        scan a QR code and fill in the ....
+                        It is best to use the Invite Visitor feature on the app to pre-invite your guests and save them
+                        the hassle of waiting. However, a contactless system has been introduced in the visitor lobby
+                        where the visitor can scan a QR code and fill in their details through a web link. All visitors
+                        will be allowed entry only after their Health Declaration form meets our safety guidelines.
                     </span>
                 </div>
             </li>
         </ul>
     </section>
     <section id="contact" class="flex-column">
-        <h2>Contact US</h2>
+        <span class="heading">Get In Touch</span>
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="row">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" id="form-name" class="form-control form-textbox" required>
+                                <label for="form-name" class="form-label">Name</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" id="form-email" class="form-control form-textbox" required>
+                                <label for="form-email" class="form-label">Email</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="number" id="form-phone" class="form-control form-textbox" required>
+                                <label for="form-phone" class="form-label">Phone</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="form-subject" class="form-control form-textbox" required>
+                            <label for="form-subject" class="form-label">Subject</label>
+                        </div>
+                        <div class="form-row text-center">
+                            <div class="form-group col-md-12">
+                                <button type="submit" class="btn btn-default col-md-10">Submit</button>
+                            </div>
+                        </div>
+                        <div class="form-row flex-column">
+                            <p class="font-weight-bold">Or reach out to us at:</p>
+                            <p>converz@pheonixindia.net</p>
+                            <div class="d-flex flex-row">
+
+                                <a class="apple-badge" target="blank" href="#">
+                                    <img alt="Get it on Apple Store" src="assets/images/apple-badge.svg" />
+                                </a>
+                                <a class="google-badge" target="blank"
+                                    href='https://play.google.com/store/apps/details?id=com.ss.phoenix&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+                                    <img alt='Get it on Google Play'
+                                        src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' />
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row footer text-white">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/images/pheonix.JPG" alt="">
+                        <p>Phoenix Forever &copy; 2020</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="assets/images/powerd-by.JPG" alt="" class="powered">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block d-xl-block contact-us-left"></div>
+        </div>
     </section>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/popper.min.js"></script>

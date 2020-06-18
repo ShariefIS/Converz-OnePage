@@ -108,7 +108,7 @@ body {
     }
     &-brand {
         img {
-            width: 2rem;
+            width: 10rem;
         }
     }
     &-nav {
@@ -125,6 +125,7 @@ body {
         }
     }
 }
+
 .collapse.show {
     .nav-item {
         .nav-link {
@@ -137,6 +138,7 @@ body {
         }
     }
 }
+
 section:not([id*="home"]) {
     position: relative;
     top: 4rem;
@@ -144,6 +146,23 @@ section:not([id*="home"]) {
     background: white;
     padding: 4rem 1.5rem;
 }
+
+.scroll-top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    display: none;
+    z-index: 100;
+    background-color: $color-priamry !important;
+}
+
+.scroll-top i {
+    display: inline-block;
+    color: #ffffff;
+}
+
 #home {
     position: relative;
     top: 4rem;
@@ -219,6 +238,21 @@ section:not([id*="home"]) {
 }
 
 #features {
+    .feature-background {
+        @include respond(phone) {
+            display: none;
+        }
+        width: 100%;
+        z-index: -1;
+        display: flex;
+        flex-direction: row-reverse;
+        img {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+    }
+
     .list-group-item {
         display: flex;
         align-items: center;
@@ -245,6 +279,7 @@ section:not([id*="home"]) {
         font-size: 2rem;
     }
 }
+
 #visitor {
     .list-group-item {
         display: flex;
@@ -272,6 +307,7 @@ section:not([id*="home"]) {
         height: 45vh;
     }
 }
+
 #faq {
     li div {
         padding: 0.4rem;
@@ -293,5 +329,97 @@ section:not([id*="home"]) {
             text-align: justify;
             text-justify: inter-word;
         }
+    }
+}
+
+#contact {
+    padding-bottom: 0.5rem;
+
+    .heading {
+        padding: 0 5rem;
+        @include respond(phone) {
+            padding: 0;
+        }
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+    form {
+        padding: 0 5rem;
+        @include respond(phone) {
+            padding: 0;
+        }
+        .form-group {
+            margin: 0;
+        }
+        .form-row {
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        .form-label {
+            position: absolute;
+            left: 10px;
+            top: 7px;
+            cursor: text;
+            transition: all 0.15s ease-in-out 0s;
+        }
+        .form-textbox {
+            border: none;
+            border-bottom: 1.5px solid #495057;
+            &:focus {
+                border-radius: 2rem;
+                box-shadow: 0 0 0 0.1rem #dae0e591;
+            }
+        }
+
+        .form-textbox:focus ~ .form-label,
+        .form-textbox:valid ~ .form-label {
+            top: -1.8em;
+            left: 0.5rem;
+            font-size: 0.9em;
+            color: inherit;
+            cursor: pointer;
+        }
+        .btn-default {
+            border: 1.5px solid #495057;
+            border-radius: 2rem;
+        }
+        .apple-badge {
+            display: flex;
+            align-items: center;
+        }
+        .google-badge {
+            img {
+                height: 4rem;
+            }
+        }
+    }
+    .footer {
+        padding: 3rem;
+        justify-content: space-between;
+        @include respond(phone) {
+            padding: 2rem;
+            justify-content: center;
+        }
+        background-color: #0178f0;
+        img {
+            width: 7rem;
+        }
+        img.powered {
+            height: 7rem;
+            @include respond(phone) {
+                height: 5rem;
+            }
+            width: inherit;
+        }
+        font-size: 1.5rem;
+        @include respond(phone) {
+            font-size: 1rem;
+        }
+    }
+    .contact-us-left {
+        background-image: url(/assets/images/contact-us-left.JPG);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }
