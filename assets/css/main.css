@@ -320,7 +320,7 @@ section:not([id*="home"]) {
 
 #visitor iframe {
   width: 60vw;
-  height: 45vh;
+  height: 65vh;
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -446,7 +446,7 @@ section:not([id*="home"]) {
 }
 
 #contact .footer {
-  padding: 3rem;
+  padding: 1rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

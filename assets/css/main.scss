@@ -166,7 +166,7 @@ section:not([id*="home"]) {
 #home {
     position: relative;
     top: 4rem;
-    background: url(assets/images/city-building.jpg);
+    background: url(../images/city-building.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -304,7 +304,7 @@ section:not([id*="home"]) {
         @include respond(tab-port) {
             width: 90vw !important;
         }
-        height: 45vh;
+        height: 65vh;
     }
 }
 
@@ -395,7 +395,7 @@ section:not([id*="home"]) {
         }
     }
     .footer {
-        padding: 3rem;
+        padding: 1rem;
         justify-content: space-between;
         @include respond(phone) {
             padding: 2rem;
@@ -418,7 +418,7 @@ section:not([id*="home"]) {
         }
     }
     .contact-us-left {
-        background-image: url(assets/images/contact-us-left.JPG);
+        background-image: url(../images/contact-us-left.JPG);
         background-size: cover;
         background-repeat: no-repeat;
     }
