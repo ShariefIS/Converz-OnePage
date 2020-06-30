@@ -24,6 +24,24 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /*
 0 - 600px:      Phone
 600 - 900px:    Tablet portrait
@@ -43,7 +61,7 @@ html {
 }
 
 body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Merriweather", serif !important;
   background-color: #212529 !important;
   font-size: 1rem;
 }
@@ -77,16 +95,18 @@ body {
 }
 
 .navbar a.download {
-  font-family: fantasy;
-  font-weight: normal;
-  color: #1ecfd8 !important;
+  color: white !important;
+  border-radius: 2rem;
+  background-color: #1ecfd8;
 }
 
 .navbar-brand img {
-  width: 10rem;
+  width: 12rem;
 }
 
 .navbar-nav .nav-item .nav-link {
+  padding-right: 0.8rem !important;
+  padding-left: 0.8rem !important;
   -webkit-transition: all ease-out 0.5;
   transition: all ease-out 0.5;
   font-weight: 600;
@@ -113,6 +133,10 @@ section:not([id*="home"]) {
   margin: 0.5rem;
   background: white;
   padding: 4rem 1.5rem;
+}
+
+section:not([id*="home"]) h2 {
+  margin-bottom: 2rem;
 }
 
 .scroll-top {
@@ -153,19 +177,19 @@ section:not([id*="home"]) {
 
 @media only screen and (max-width: 37.5em) {
   #home .heading span:nth-child(1) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
 @media only screen and (max-width: 75.5em) and (min-width: 37.5em) {
   #home .heading span:nth-child(1) {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   #home .heading span:nth-child(1) {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
@@ -174,7 +198,7 @@ section:not([id*="home"]) {
 }
 
 #home .heading-video .placeholder {
-  height: 70vh;
+  height: 75vh;
   width: 100%;
   z-index: 10;
 }
@@ -212,7 +236,7 @@ section:not([id*="home"]) {
 #home .heading-video iframe {
   position: relative;
   top: 0.5rem;
-  height: 60vh;
+  height: 65vh;
   width: 99%;
   left: 0.5%;
 }
@@ -228,6 +252,14 @@ section:not([id*="home"]) {
   z-index: 20;
   cursor: pointer;
   font-size: 1.3rem;
+}
+
+#features .fade-in {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
 }
 
 #features .feature-background {
@@ -270,6 +302,11 @@ section:not([id*="home"]) {
   }
 }
 
+#features .list-group-item img.list-icons {
+  width: 45px;
+  height: 45px;
+}
+
 #features .list-group-item span {
   padding-left: 1rem;
   text-align: justify;
@@ -282,12 +319,19 @@ section:not([id*="home"]) {
   width: 1.5rem;
 }
 
-#features a {
+#features a.download {
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: white;
   cursor: pointer;
-  font-family: fantasy;
   text-transform: capitalize;
   text-decoration: none;
-  font-size: 2rem;
+  border-radius: 2rem;
+  background-color: #1ecfd8;
+}
+
+#visitor .img-tick {
+  width: 60px;
 }
 
 #visitor .list-group-item {
@@ -310,6 +354,12 @@ section:not([id*="home"]) {
   padding-left: 1rem;
   text-align: justify;
   text-justify: inter-word;
+}
+
+@media only screen and (max-width: 37.5em) {
+  #visitor .list-group-item span {
+    padding-left: 0rem;
+  }
 }
 
 #visitor .list-group-item .fa {
@@ -442,7 +492,7 @@ section:not([id*="home"]) {
 }
 
 #contact form .google-badge img {
-  height: 4rem;
+  height: 3.5rem;
 }
 
 #contact .footer {
@@ -450,7 +500,7 @@ section:not([id*="home"]) {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #0178f0;
+  background-color: #015798;
   font-size: 1.5rem;
 }
 

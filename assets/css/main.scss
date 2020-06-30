@@ -9,6 +9,50 @@ $color-priamry: #1ecfd8;
         transform: translateX(0%);
     }
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 // MEDIA QUERY MANAGER
 /*
 0 - 600px:      Phone
@@ -70,7 +114,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-family: "Merriweather", serif !important;
     background-color: #212529 !important;
     font-size: 1rem;
     @include respond(phone-xs) {
@@ -102,18 +146,20 @@ body {
 }
 .navbar {
     a.download {
-        font-family: fantasy;
-        font-weight: normal;
-        color: $color-priamry !important;
+        color: white !important;
+        border-radius: 2rem;
+        background-color: $color-priamry;
     }
     &-brand {
         img {
-            width: 10rem;
+            width: 12rem;
         }
     }
     &-nav {
         .nav-item {
             .nav-link {
+                padding-right: 0.8rem !important;
+                padding-left: 0.8rem !important;
                 transition: all ease-out 0.5;
                 font-weight: 600;
                 &.active,
@@ -145,6 +191,9 @@ section:not([id*="home"]) {
     margin: 0.5rem;
     background: white;
     padding: 4rem 1.5rem;
+    h2 {
+        margin-bottom: 2rem;
+    }
 }
 
 .scroll-top {
@@ -179,19 +228,19 @@ section:not([id*="home"]) {
         padding: 1rem;
         span:nth-child(1) {
             @include respond(phone) {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             @include respond(only-tab-land) {
-                font-size: 3.5rem;
+                font-size: 2.5rem;
             }
             @include respond(desktop) {
-                font-size: 4rem;
+                font-size: 3rem;
             }
         }
         &-video {
             position: relative;
             .placeholder {
-                height: 70vh;
+                height: 75vh;
                 width: 100%;
                 z-index: 10;
                 &:hover {
@@ -218,7 +267,7 @@ section:not([id*="home"]) {
             iframe {
                 position: relative;
                 top: 0.5rem;
-                height: 60vh;
+                height: 65vh;
                 width: 99%;
                 left: 0.5%;
             }
@@ -238,6 +287,13 @@ section:not([id*="home"]) {
 }
 
 #features {
+    .fade-in {
+        animation: fadeIn ease 5s;
+        -webkit-animation: fadeIn ease 5s;
+        -moz-animation: fadeIn ease 5s;
+        -o-animation: fadeIn ease 5s;
+        -ms-animation: fadeIn ease 5s;
+    }
     .feature-background {
         @include respond(phone) {
             display: none;
@@ -260,6 +316,10 @@ section:not([id*="home"]) {
         @include respond(phone) {
             padding: 0.75rem 0.25rem !important;
         }
+        img.list-icons {
+            width: 45px;
+            height: 45px;
+        }
         span {
             padding-left: 1rem;
             text-align: justify;
@@ -271,16 +331,23 @@ section:not([id*="home"]) {
             width: 1.5rem;
         }
     }
-    a {
+    a.download {
+        // margin-top: 1rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+        color: white;
         cursor: pointer;
-        font-family: fantasy;
         text-transform: capitalize;
         text-decoration: none;
-        font-size: 2rem;
+        border-radius: 2rem;
+        background-color: $color-priamry;
     }
 }
 
 #visitor {
+    .img-tick {
+        width: 60px;
+    }
     .list-group-item {
         display: flex;
         align-items: center;
@@ -289,6 +356,9 @@ section:not([id*="home"]) {
             padding: 0.75rem 0.25rem !important;
         }
         span {
+            @include respond(phone) {
+                padding-left: 0rem;
+            }
             padding-left: 1rem;
             text-align: justify;
             text-justify: inter-word;
@@ -390,7 +460,7 @@ section:not([id*="home"]) {
         }
         .google-badge {
             img {
-                height: 4rem;
+                height: 3.5rem;
             }
         }
     }
@@ -401,7 +471,7 @@ section:not([id*="home"]) {
             padding: 2rem;
             justify-content: center;
         }
-        background-color: #0178f0;
+        background-color: #015798;
         img {
             width: 7rem;
         }
