@@ -192,6 +192,7 @@ section:not([id*="home"]) {
     background: white;
     padding: 4rem 1.5rem;
     h2 {
+        margin-top: 1rem;
         margin-bottom: 2rem;
     }
 }
@@ -245,14 +246,21 @@ section:not([id*="home"]) {
                 z-index: 10;
                 &:hover {
                     background-color: rgba(0, 0, 0, 0.5);
+                    span {
+                        text-shadow: 2px 2px black;
+                        color: white !important;
+                    }
                 }
                 .play-button {
-                    cursor: pointer;
-                    height: 10rem;
-                    filter: contrast(0.8);
                     z-index: 5;
+                    cursor: pointer;
+                    img {
+                        height: 10rem;
+                        filter: contrast(0.8);
+                    }
                 }
                 span {
+                    text-shadow: 2px 2px #ffffff;
                     @include respond(phone) {
                         width: 70vw;
                     }
@@ -272,10 +280,11 @@ section:not([id*="home"]) {
                 left: 0.5%;
             }
             .explore {
-                height: 69vh;
+                height: 73vh;
                 width: 98%;
                 position: absolute;
                 top: 0;
+                text-shadow: 1px 1px #ffffff;
                 a {
                     z-index: 20;
                     cursor: pointer;
@@ -287,6 +296,9 @@ section:not([id*="home"]) {
 }
 
 #features {
+    #feature-fade {
+        opacity: 0;
+    }
     .fade-in {
         animation: fadeIn ease 5s;
         -webkit-animation: fadeIn ease 5s;

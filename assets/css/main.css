@@ -136,6 +136,7 @@ section:not([id*="home"]) {
 }
 
 section:not([id*="home"]) h2 {
+  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -207,12 +208,24 @@ section:not([id*="home"]) h2 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+#home .heading-video .placeholder:hover span {
+  text-shadow: 2px 2px black;
+  color: white !important;
+}
+
 #home .heading-video .placeholder .play-button {
+  z-index: 5;
   cursor: pointer;
+}
+
+#home .heading-video .placeholder .play-button img {
   height: 10rem;
   -webkit-filter: contrast(0.8);
           filter: contrast(0.8);
-  z-index: 5;
+}
+
+#home .heading-video .placeholder span {
+  text-shadow: 2px 2px #ffffff;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -242,16 +255,21 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .explore {
-  height: 69vh;
+  height: 73vh;
   width: 98%;
   position: absolute;
   top: 0;
+  text-shadow: 1px 1px #ffffff;
 }
 
 #home .heading-video .explore a {
   z-index: 20;
   cursor: pointer;
   font-size: 1.3rem;
+}
+
+#features #feature-fade {
+  opacity: 0;
 }
 
 #features .fade-in {
