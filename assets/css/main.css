@@ -274,6 +274,7 @@ section:not([id*="home"]) h2 {
 
 #features .fade-in {
   animation: fadeIn ease 5s;
+  opacity: 1 !important;
   -webkit-animation: fadeIn ease 5s;
   -moz-animation: fadeIn ease 5s;
   -o-animation: fadeIn ease 5s;
