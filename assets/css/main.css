@@ -203,15 +203,7 @@ section:not([id*="home"]) h2 {
   height: 75vh;
   width: 100%;
   z-index: 10;
-}
-
-#home .heading-video .placeholder:hover {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-#home .heading-video .placeholder:hover span {
-  text-shadow: 2px 2px black;
-  color: white !important;
 }
 
 #home .heading-video .placeholder .play-button {
@@ -226,7 +218,8 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .placeholder span {
-  text-shadow: 0px 1.5px #ffffff;
+  color: white !important;
+  text-shadow: 0px 1.5px #0000;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -248,14 +241,15 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .explore {
-  height: 73vh;
-  width: 98%;
   position: absolute;
   top: 0;
-  text-shadow: 1px 1px #ffffff;
+  height: 73vh;
+  width: 98%;
 }
 
 #home .heading-video .explore a {
+  color: #fff;
+  text-shadow: 1px 1px #000;
   z-index: 20;
   cursor: pointer;
   font-size: 1.3rem;
@@ -270,7 +264,13 @@ section:not([id*="home"]) h2 {
   right: -9%;
   top: -5%;
   font-size: 3rem;
-  color: black;
+  color: #f00;
+  opacity: 0.95 !important;
+}
+
+.modal-body .close:hover {
+  color: #f00;
+  opacity: 1.2 !important;
 }
 
 @media only screen and (max-width: 37.5em) {

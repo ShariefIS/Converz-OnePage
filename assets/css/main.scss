@@ -246,13 +246,7 @@ section:not([id*="home"]) {
                 height: 75vh;
                 width: 100%;
                 z-index: 10;
-                &:hover {
-                    background-color: rgba(0, 0, 0, 0.5);
-                    span {
-                        text-shadow: 2px 2px black;
-                        color: white !important;
-                    }
-                }
+                background-color: rgba(0, 0, 0, 0.5);
                 .play-button {
                     z-index: 5;
                     cursor: pointer;
@@ -262,7 +256,8 @@ section:not([id*="home"]) {
                     }
                 }
                 span {
-                    text-shadow: 0px 1.5px #ffffff;
+                    color: white !important;
+                    text-shadow: 0px 1.5px #0000;
                     @include respond(phone) {
                         width: 70vw;
                     }
@@ -275,12 +270,13 @@ section:not([id*="home"]) {
                 }
             }
             .explore {
-                height: 73vh;
-                width: 98%;
                 position: absolute;
                 top: 0;
-                text-shadow: 1px 1px #ffffff;
+                height: 73vh;
+                width: 98%;
                 a {
+                    color: #fff;
+                    text-shadow: 1px 1px #000;
                     z-index: 20;
                     cursor: pointer;
                     font-size: 1.3rem;
@@ -297,7 +293,12 @@ section:not([id*="home"]) {
             right: -9%;
             top: -5%;
             font-size: 3rem;
-            color: black;
+            color: #f00;
+            opacity: 0.95 !important;
+            &:hover {
+                color: #f00;
+                opacity: 1.2 !important;
+            }
             @include respond(phone) {
                 right: 0%;
                 top: -7%;
