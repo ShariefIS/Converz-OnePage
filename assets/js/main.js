@@ -58,10 +58,10 @@ $(document).ready(function () {
     $("#feature-fade").inViewport(function (px) {
         if (px) $(this).addClass("fade-in");
     });
-
 });
-function watchVideo() {
-    $(".placeholder").addClass("d-none");
-    $(".placeholder").removeClass("d-flex");
-    $("#dashboard-video").removeClass("d-none")
+function startVideo() {
+    document.getElementById("dashboard-video").setAttribute("src", "https://www.youtube.com/embed/51ZHNkH-RLM?autoplay=1")
+}
+function stopVideo() {
+    document.getElementById("dashboard-video").setAttribute("src", "")
 }

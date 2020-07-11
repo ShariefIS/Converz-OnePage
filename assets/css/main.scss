@@ -221,12 +221,14 @@ section:not([id*="home"]) {
     background-position: center;
     background-size: cover;
     height: 92vh;
+
     .heading {
         display: flex;
         background: black;
         color: white;
         font-weight: bold;
         padding: 1rem;
+        font-family: Helvetica;
         span:nth-child(1) {
             @include respond(phone) {
                 font-size: 1.5rem;
@@ -260,7 +262,7 @@ section:not([id*="home"]) {
                     }
                 }
                 span {
-                    text-shadow: 2px 2px #ffffff;
+                    text-shadow: 0px 1.5px #ffffff;
                     @include respond(phone) {
                         width: 70vw;
                     }
@@ -271,13 +273,6 @@ section:not([id*="home"]) {
                         width: 20vw;
                     }
                 }
-            }
-            iframe {
-                position: relative;
-                top: 0.5rem;
-                height: 65vh;
-                width: 99%;
-                left: 0.5%;
             }
             .explore {
                 height: 73vh;
@@ -293,6 +288,33 @@ section:not([id*="home"]) {
             }
         }
     }
+}
+.modal {
+    &-body {
+        padding: 0 !important;
+        .close {
+            position: absolute;
+            right: -9%;
+            top: -5%;
+            font-size: 3rem;
+            color: black;
+            @include respond(phone) {
+                right: 0%;
+                top: -7%;
+                font-size: 2.5rem;
+            }
+        }
+    }
+    &-content {
+        background-color: transparent !important;
+        border: none !important;
+    }
+}
+#dashboard-video {
+    height: 88vh;
+    width: 110%;
+    left: -5%;
+    position: relative;
 }
 
 #features {
@@ -358,12 +380,13 @@ section:not([id*="home"]) {
 
 #visitor {
     .img-tick {
-        width: 60px;
+        width: 25px;
     }
     .list-group-item {
         display: flex;
         align-items: center;
         border: none;
+        padding: 1.75rem 0.25rem;
         @include respond(phone) {
             padding: 0.75rem 0.25rem !important;
         }
@@ -477,22 +500,24 @@ section:not([id*="home"]) {
         }
     }
     .footer {
-        padding: 1rem;
+        padding: 1rem 2rem;
         justify-content: space-between;
-        @include respond(phone) {
-            padding: 2rem;
-            justify-content: center;
-        }
+        // @include respond(phone) {
+        //     padding: 2rem;
+        //     justify-content: center;
+        // }
         background-color: #015798;
         img {
             width: 7rem;
         }
-        img.powered {
-            height: 7rem;
-            @include respond(phone) {
-                height: 5rem;
+        .powered {
+            img {
+                height: 3rem;
+                @include respond(phone) {
+                    height: 2rem;
+                }
+                width: inherit;
             }
-            width: inherit;
         }
         font-size: 1.5rem;
         @include respond(phone) {

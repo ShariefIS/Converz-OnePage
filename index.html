@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/favicon.png">
 </head>
 
 <body>
@@ -37,9 +38,9 @@
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
-            <a class="nav-link download text-center shadow" href="https://thecrew-game.ubisoft.com/"
-                target="_blank">Download
-                Now</a>
+            <a class="nav-link download text-center shadow" href="https://thecrew-game.ubisoft.com/" target="_blank">
+                DownloadNow
+            </a>
 
         </div>
     </nav>
@@ -57,19 +58,39 @@
         </div>
         <div class="heading-video">
             <div class="placeholder text-center d-flex align-items-center justify-content-center flex-column">
-                <a class="play-button" onclick="watchVideo()"><img src="assets/images/playButton.png" alt=""></a>
-                <span class="mt-5 text-dark font-weight-bold">See how Converz app can power up your experience in a 70s
-                    video</span>
+                <a class="play-button" type="button"><img src="assets/images/playButton.png" alt="" data-toggle="modal"
+                        data-target="#staticBackdrop" onclick="startVideo()"></a>
+                <span class="mt-5 text-dark font-weight-bold">
+                    See how Converz app can power up your experience in a 70s video
+                </span>
                 <div class="d-flex align-items-end justify-content-center">
                     <span> </span>
                 </div>
             </div>
             <div class="d-flex align-items-end justify-content-center explore p-3">
-                <a class="text-dark font-weight-bold text-decoration-none shadow " href="#features"><u>Explore
-                        more</u></a>
+                <a class="text-dark font-weight-bold text-decoration-none shadow " href="#features">
+                    <u>Explore more</u>
+                </a>
             </div>
-            <iframe class="d-none" id="dashboard-video" src="https://www.youtube.com/embed/LVDUbfdfBPk" frameborder="0"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog  modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                onclick="stopVideo()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <!-- <div id="dashboard-video"></div> -->
+                            <iframe id="dashboard-video" src="" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="features" class="flex-column">
@@ -232,19 +253,21 @@
                         </div>
                     </form>
                 </div>
-                <div class="row footer text-white">
+                <div class="row footer text-white align-items-center">
                     <div class="d-flex flex-column align-items-center">
                         <img src="assets/images/pheonix.JPG" alt="">
-                        <p>Phoenix Forever &copy; 2020</p>
+                        <p class="m-0">Phoenix Forever &copy; 2020</p>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <img src="assets/images/powerd-by.JPG" alt="" class="powered">
+                    <div class="d-flex align-items-left flex-column powered">
+                        <span>Powered By:</span>
+                        <img src="assets/images/logo-footer.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 d-none d-lg-block d-xl-block contact-us-left"></div>
         </div>
     </section>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

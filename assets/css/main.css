@@ -174,6 +174,7 @@ section:not([id*="home"]) h2 {
   color: white;
   font-weight: bold;
   padding: 1rem;
+  font-family: Helvetica;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -225,7 +226,7 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .placeholder span {
-  text-shadow: 2px 2px #ffffff;
+  text-shadow: 0px 1.5px #ffffff;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -246,14 +247,6 @@ section:not([id*="home"]) h2 {
   }
 }
 
-#home .heading-video iframe {
-  position: relative;
-  top: 0.5rem;
-  height: 65vh;
-  width: 99%;
-  left: 0.5%;
-}
-
 #home .heading-video .explore {
   height: 73vh;
   width: 98%;
@@ -266,6 +259,38 @@ section:not([id*="home"]) h2 {
   z-index: 20;
   cursor: pointer;
   font-size: 1.3rem;
+}
+
+.modal-body {
+  padding: 0 !important;
+}
+
+.modal-body .close {
+  position: absolute;
+  right: -9%;
+  top: -5%;
+  font-size: 3rem;
+  color: black;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .modal-body .close {
+    right: 0%;
+    top: -7%;
+    font-size: 2.5rem;
+  }
+}
+
+.modal-content {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+#dashboard-video {
+  height: 88vh;
+  width: 110%;
+  left: -5%;
+  position: relative;
 }
 
 #features #feature-fade {
@@ -350,7 +375,7 @@ section:not([id*="home"]) h2 {
 }
 
 #visitor .img-tick {
-  width: 60px;
+  width: 25px;
 }
 
 #visitor .list-group-item {
@@ -361,6 +386,7 @@ section:not([id*="home"]) h2 {
       -ms-flex-align: center;
           align-items: center;
   border: none;
+  padding: 1.75rem 0.25rem;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -515,7 +541,7 @@ section:not([id*="home"]) h2 {
 }
 
 #contact .footer {
-  padding: 1rem;
+  padding: 1rem 2rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -523,27 +549,18 @@ section:not([id*="home"]) h2 {
   font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 37.5em) {
-  #contact .footer {
-    padding: 2rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
 #contact .footer img {
   width: 7rem;
 }
 
-#contact .footer img.powered {
-  height: 7rem;
+#contact .footer .powered img {
+  height: 3rem;
   width: inherit;
 }
 
 @media only screen and (max-width: 37.5em) {
-  #contact .footer img.powered {
-    height: 5rem;
+  #contact .footer .powered img {
+    height: 2rem;
   }
 }
 
