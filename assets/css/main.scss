@@ -508,8 +508,13 @@ section:not([id*="home"]) {
         //     justify-content: center;
         // }
         background-color: #015798;
-        img {
-            width: 7rem;
+        .pheonix {
+            img {
+                @include respond(phone) {
+                    height: 4rem;
+                }
+                height: 6rem;
+            }
         }
         .powered {
             img {

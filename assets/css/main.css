@@ -549,8 +549,14 @@ section:not([id*="home"]) h2 {
   font-size: 1.5rem;
 }
 
-#contact .footer img {
-  width: 7rem;
+#contact .footer .pheonix img {
+  height: 6rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  #contact .footer .pheonix img {
+    height: 4rem;
+  }
 }
 
 #contact .footer .powered img {
