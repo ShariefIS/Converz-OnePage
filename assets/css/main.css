@@ -61,12 +61,11 @@ html {
 }
 
 body {
-  font-family: "Merriweather", serif !important;
-  background-color: #212529 !important;
+  font-family: "Roboto", sans-serif !important;
   font-size: 1rem;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 320px) {
   body {
     font-size: 0.8rem !important;
   }
@@ -95,7 +94,7 @@ body {
 }
 
 .navbar a.download {
-  color: white !important;
+  color: #fff !important;
   border-radius: 2rem;
   background-color: #1ecfd8;
 }
@@ -131,8 +130,8 @@ section:not([id*="home"]) {
   position: relative;
   top: 4rem;
   margin: 0.5rem;
-  background: white;
-  padding: 4rem 1.5rem;
+  background: #fff;
+  padding: 4rem 0;
 }
 
 section:not([id*="home"]) h2 {
@@ -171,10 +170,9 @@ section:not([id*="home"]) h2 {
   display: -ms-flexbox;
   display: flex;
   background: black;
-  color: white;
+  color: #fff;
   font-weight: bold;
   padding: 1rem;
-  font-family: Helvetica;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -200,7 +198,7 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .placeholder {
-  height: 75vh;
+  height: 73vh;
   width: 100%;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
@@ -218,7 +216,7 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .placeholder span {
-  color: white !important;
+  color: #fff !important;
   text-shadow: 0px 1.5px #0000;
 }
 
@@ -326,7 +324,7 @@ section:not([id*="home"]) h2 {
 
 #features .feature-background img {
   position: absolute;
-  height: 100%;
+  height: 80%;
   top: 0;
 }
 
@@ -366,7 +364,7 @@ section:not([id*="home"]) h2 {
 #features a.download {
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  color: white;
+  color: #fff;
   cursor: pointer;
   text-transform: capitalize;
   text-decoration: none;
@@ -424,6 +422,15 @@ section:not([id*="home"]) h2 {
   }
 }
 
+#faq {
+  background-color: #f8f9fa !important;
+  padding: 2rem 0 !important;
+}
+
+#faq ul {
+  list-style: none;
+}
+
 #faq li div {
   padding: 0.4rem;
   display: -webkit-box;
@@ -475,12 +482,17 @@ section:not([id*="home"]) h2 {
 }
 
 #contact form {
+  background: #fff;
+  border-radius: 3rem;
   padding: 0 5rem;
 }
 
 @media only screen and (max-width: 37.5em) {
   #contact form {
-    padding: 0;
+    padding: 0 2rem;
+  }
+  #contact form .form-email {
+    margin-top: 2rem !important;
   }
 }
 
@@ -541,12 +553,30 @@ section:not([id*="home"]) h2 {
 }
 
 #contact .footer {
+  position: relative;
+  top: 1rem;
+  max-width: 53%;
   padding: 1rem 2rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #015798;
+  background-color: #1ecfd8;
   font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  #contact .footer {
+    font-size: 1rem;
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #contact .footer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 #contact .footer .pheonix img {
@@ -570,15 +600,10 @@ section:not([id*="home"]) h2 {
   }
 }
 
-@media only screen and (max-width: 37.5em) {
-  #contact .footer {
-    font-size: 1rem;
-  }
-}
-
-#contact .contact-us-left {
-  background-image: url(../images/contact-us-left.JPG);
-  background-size: cover;
+#contact.contact-us-left {
+  background-image: url(../images/contact-us.jpg);
+  background-size: contain;
+  background-position-x: center;
   background-repeat: no-repeat;
 }
 /*# sourceMappingURL=main.css.map */

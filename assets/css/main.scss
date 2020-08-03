@@ -70,7 +70,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 */
 @mixin respond($breakpoint) {
     @if $breakpoint == phone-xs {
-        @media only screen and (max-width: 450px) {
+        @media only screen and (max-width: 320px) {
             @content;
         } //450px
     }
@@ -114,8 +114,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: "Merriweather", serif !important;
-    background-color: #212529 !important;
+    font-family: "Roboto", sans-serif !important;
     font-size: 1rem;
     @include respond(phone-xs) {
         font-size: 0.8rem !important;
@@ -146,7 +145,7 @@ body {
 }
 .navbar {
     a.download {
-        color: white !important;
+        color: #fff !important;
         border-radius: 2rem;
         background-color: $color-priamry;
     }
@@ -189,8 +188,8 @@ section:not([id*="home"]) {
     position: relative;
     top: 4rem;
     margin: 0.5rem;
-    background: white;
-    padding: 4rem 1.5rem;
+    background: #fff;
+    padding: 4rem 0;
     h2 {
         margin-top: 1rem;
         margin-bottom: 2rem;
@@ -225,10 +224,9 @@ section:not([id*="home"]) {
     .heading {
         display: flex;
         background: black;
-        color: white;
+        color: #fff;
         font-weight: bold;
         padding: 1rem;
-        font-family: Helvetica;
         span:nth-child(1) {
             @include respond(phone) {
                 font-size: 1.5rem;
@@ -243,7 +241,7 @@ section:not([id*="home"]) {
         &-video {
             position: relative;
             .placeholder {
-                height: 75vh;
+                height: 73vh;
                 width: 100%;
                 z-index: 10;
                 background-color: rgba(0, 0, 0, 0.5);
@@ -256,7 +254,7 @@ section:not([id*="home"]) {
                     }
                 }
                 span {
-                    color: white !important;
+                    color: #fff !important;
                     text-shadow: 0px 1.5px #0000;
                     @include respond(phone) {
                         width: 70vw;
@@ -340,7 +338,7 @@ section:not([id*="home"]) {
         flex-direction: row-reverse;
         img {
             position: absolute;
-            height: 100%;
+            height: 80%;
             top: 0;
         }
     }
@@ -370,7 +368,7 @@ section:not([id*="home"]) {
     a.download {
         padding: 0.5rem 1rem;
         font-size: 1.1rem;
-        color: white;
+        color: #fff;
         cursor: pointer;
         text-transform: capitalize;
         text-decoration: none;
@@ -415,6 +413,11 @@ section:not([id*="home"]) {
 }
 
 #faq {
+    background-color: #f8f9fa !important;
+    padding: 2rem 0 !important;
+    ul {
+        list-style: none;
+    }
     li div {
         padding: 0.4rem;
         display: flex;
@@ -450,10 +453,15 @@ section:not([id*="home"]) {
         text-transform: uppercase;
     }
     form {
-        padding: 0 5rem;
         @include respond(phone) {
-            padding: 0;
+            padding: 0 2rem;
+            .form-email {
+                margin-top: 2rem !important;
+            }
         }
+        background: #fff;
+        border-radius: 3rem;
+        padding: 0 5rem;
         .form-group {
             margin: 0;
         }
@@ -501,13 +509,20 @@ section:not([id*="home"]) {
         }
     }
     .footer {
+        position: relative;
+        top: 1rem;
+        max-width: 53%;
         padding: 1rem 2rem;
         justify-content: space-between;
-        // @include respond(phone) {
-        //     padding: 2rem;
-        //     justify-content: center;
-        // }
-        background-color: #015798;
+        background-color: $color-priamry;
+        font-size: 1.5rem;
+        @include respond(phone) {
+            font-size: 1rem;
+            width: 100vw;
+        }
+        @include respond(phone-xs) {
+            justify-content: center;
+        }
         .pheonix {
             img {
                 @include respond(phone) {
@@ -525,14 +540,11 @@ section:not([id*="home"]) {
                 width: inherit;
             }
         }
-        font-size: 1.5rem;
-        @include respond(phone) {
-            font-size: 1rem;
-        }
     }
-    .contact-us-left {
-        background-image: url(../images/contact-us-left.JPG);
-        background-size: cover;
+    &.contact-us-left {
+        background-image: url(../images/contact-us.jpg);
+        background-size: contain;
+        background-position-x: center;
         background-repeat: no-repeat;
     }
 }
