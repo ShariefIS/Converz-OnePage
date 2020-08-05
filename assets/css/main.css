@@ -56,21 +56,6 @@ $breakpoint arguement choices:
 ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Roboto", sans-serif !important;
-  font-size: 1rem;
-}
-
-@media only screen and (max-width: 320px) {
-  body {
-    font-size: 0.8rem !important;
-  }
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
@@ -91,6 +76,21 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #25f4ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 320px) {
+  body {
+    font-size: 0.8rem !important;
+  }
 }
 
 .navbar a.download {
@@ -169,8 +169,6 @@ section:not([id*="home"]) h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: black;
-  color: #fff;
   font-weight: bold;
   padding: 1rem;
 }
@@ -198,10 +196,10 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .placeholder {
-  height: 73vh;
+  height: 71vh;
   width: 100%;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #1ecfd87e;
 }
 
 #home .heading-video .placeholder .play-button {
@@ -477,7 +475,7 @@ section:not([id*="home"]) h2 {
 
 @media only screen and (max-width: 37.5em) {
   #contact .heading {
-    padding: 0;
+    color: #fff;
   }
 }
 
@@ -554,7 +552,6 @@ section:not([id*="home"]) h2 {
 
 #contact .footer {
   position: relative;
-  top: 1rem;
   max-width: 53%;
   padding: 1rem 2rem;
   -webkit-box-pack: justify;
@@ -566,6 +563,8 @@ section:not([id*="home"]) h2 {
 
 @media only screen and (max-width: 37.5em) {
   #contact .footer {
+    max-width: inherit;
+    margin: 0;
     font-size: 1rem;
     width: 100vw;
   }
@@ -602,8 +601,9 @@ section:not([id*="home"]) h2 {
 
 #contact.contact-us-left {
   background-image: url(../images/contact-us.jpg);
-  background-size: contain;
+  background-size: cover;
   background-position-x: center;
   background-repeat: no-repeat;
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */

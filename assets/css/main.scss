@@ -110,16 +110,6 @@ ORDER: Base + typography > general layout + grid > page layout > components
         } //1800
     }
 }
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-family: "Roboto", sans-serif !important;
-    font-size: 1rem;
-    @include respond(phone-xs) {
-        font-size: 0.8rem !important;
-    }
-}
 // CUSTOM SCROLLBAR
 
 /* width */
@@ -143,6 +133,19 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #25f4ff;
 }
+
+// SASS Styles
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 1rem;
+    @include respond(phone-xs) {
+        font-size: 0.8rem !important;
+    }
+}
+
 .navbar {
     a.download {
         color: #fff !important;
@@ -223,8 +226,6 @@ section:not([id*="home"]) {
 
     .heading {
         display: flex;
-        background: black;
-        color: #fff;
         font-weight: bold;
         padding: 1rem;
         span:nth-child(1) {
@@ -241,10 +242,10 @@ section:not([id*="home"]) {
         &-video {
             position: relative;
             .placeholder {
-                height: 73vh;
+                height: 71vh;
                 width: 100%;
                 z-index: 10;
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: #1ecfd87e;
                 .play-button {
                     z-index: 5;
                     cursor: pointer;
@@ -447,7 +448,7 @@ section:not([id*="home"]) {
     .heading {
         padding: 0 5rem;
         @include respond(phone) {
-            padding: 0;
+            color: #fff;
         }
         font-size: 2rem;
         text-transform: uppercase;
@@ -510,13 +511,14 @@ section:not([id*="home"]) {
     }
     .footer {
         position: relative;
-        top: 1rem;
         max-width: 53%;
         padding: 1rem 2rem;
         justify-content: space-between;
         background-color: $color-priamry;
         font-size: 1.5rem;
         @include respond(phone) {
+            max-width: inherit;
+            margin: 0;
             font-size: 1rem;
             width: 100vw;
         }
@@ -543,8 +545,9 @@ section:not([id*="home"]) {
     }
     &.contact-us-left {
         background-image: url(../images/contact-us.jpg);
-        background-size: contain;
+        background-size: cover;
         background-position-x: center;
         background-repeat: no-repeat;
+        width: 100%;
     }
 }
