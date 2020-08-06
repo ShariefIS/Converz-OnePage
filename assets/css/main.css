@@ -303,16 +303,17 @@ section:not([id*="home"]) h2 {
           flex-direction: row-reverse;
 }
 
-@media only screen and (max-width: 37.5em) {
-  #features .feature-background {
-    display: none;
-  }
-}
-
 #features .feature-background img {
   position: absolute;
   height: 80%;
   top: 0;
+}
+
+@media only screen and (max-width: 37.5em) {
+  #features .feature-background img {
+    position: relative;
+    height: 100vw;
+  }
 }
 
 #features .list-group-item {
@@ -489,6 +490,12 @@ section:not([id*="home"]) h2 {
   }
 }
 
+@media only screen and (max-width: 321px) {
+  #contact form {
+    padding: 0;
+  }
+}
+
 #contact form .form-group {
   margin: 0;
 }
@@ -561,6 +568,8 @@ section:not([id*="home"]) h2 {
     margin: 0;
     font-size: 1rem;
     width: 100vw;
+    position: relative;
+    top: 168px;
   }
 }
 
@@ -599,5 +608,12 @@ section:not([id*="home"]) h2 {
   background-position-x: center;
   background-repeat: no-repeat;
   background-position: right;
+}
+
+@media only screen and (max-width: 37.5em) {
+  #contact .contact-us-left {
+    top: -118px;
+    height: 168px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
