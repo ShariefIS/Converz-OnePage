@@ -72,42 +72,42 @@ ORDER: Base + typography > general layout + grid > page layout > components
     @if $breakpoint == phone-xs {
         @media only screen and (max-width: 320px) {
             @content;
-        } //450px
+        }
     }
     @if $breakpoint == phone {
         @media only screen and (max-width: 37.5em) {
             @content;
-        } //600px
+        }
     }
     @if $breakpoint == tab-port {
         @media only screen and (max-width: 56.25em) {
             @content;
-        } //900px
+        }
     }
     @if $breakpoint == tab-land {
         @media only screen and (max-width: 75em) {
             @content;
-        } //1200px
+        }
     }
     @if $breakpoint == desktop {
         @media only screen and (min-width: 1024px) {
             @content;
-        } //1024px
+        }
     }
     @if $breakpoint == only-tab-land {
         @media only screen and (max-width: 75.5em) and (min-width: 37.5em) {
             @content;
-        } //1200px
+        }
     }
     @if $breakpoint == big-desktop {
         @media only screen and (min-width: 112.5em) {
             @content;
-        } //1800
+        }
     }
     @if $breakpoint == 4k-desktop {
-        @media only screen and (min-width: 3400px) {
+        @media only screen and (min-width: 2500px) {
             @content;
-        } //1800
+        }
     }
 }
 // CUSTOM SCROLLBAR
@@ -215,6 +215,33 @@ section:not([id*="home"]) {
     color: #ffffff;
 }
 
+.modal {
+    &-body {
+        padding: 0 !important;
+        .close {
+            position: absolute;
+            right: -9%;
+            top: -5%;
+            font-size: 3rem;
+            font-weight: lighter !important;
+            color: #f00;
+            opacity: 0.95 !important;
+            &:hover {
+                color: #f00;
+                opacity: 1.2 !important;
+            }
+            @include respond(phone) {
+                right: 0%;
+                top: -7%;
+                font-size: 2.5rem;
+            }
+        }
+    }
+    &-content {
+        background-color: transparent !important;
+        border: none !important;
+    }
+}
 #home {
     position: relative;
     top: 4rem;
@@ -222,8 +249,10 @@ section:not([id*="home"]) {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 92vh;
-
+    height: 91vh;
+    @include respond(4k-desktop) {
+        height: 95vh;
+    }
     .heading {
         display: flex;
         font-weight: bold;
@@ -242,29 +271,18 @@ section:not([id*="home"]) {
         &-video {
             position: relative;
             .placeholder {
-                height: 71vh;
+                height: 91vh;
+                @include respond(4k-desktop) {
+                    height: 95vh;
+                }
                 width: 100%;
-                z-index: 10;
                 background-color: #1ecfd87e;
                 .play-button {
                     z-index: 5;
                     cursor: pointer;
                     img {
-                        height: 10rem;
+                        height: 6rem;
                         filter: contrast(0.8);
-                    }
-                }
-                span {
-                    color: #fff !important;
-                    text-shadow: 0px 1.5px #0000;
-                    @include respond(phone) {
-                        width: 70vw;
-                    }
-                    @include respond(only-tab-land) {
-                        width: 40vw;
-                    }
-                    @include respond(desktop) {
-                        width: 20vw;
                     }
                 }
             }
@@ -284,32 +302,7 @@ section:not([id*="home"]) {
         }
     }
 }
-.modal {
-    &-body {
-        padding: 0 !important;
-        .close {
-            position: absolute;
-            right: -9%;
-            top: -5%;
-            font-size: 3rem;
-            color: #f00;
-            opacity: 0.95 !important;
-            &:hover {
-                color: #f00;
-                opacity: 1.2 !important;
-            }
-            @include respond(phone) {
-                right: 0%;
-                top: -7%;
-                font-size: 2.5rem;
-            }
-        }
-    }
-    &-content {
-        background-color: transparent !important;
-        border: none !important;
-    }
-}
+
 #dashboard-video {
     height: 88vh;
     width: 110%;
@@ -411,6 +404,13 @@ section:not([id*="home"]) {
         }
         height: 65vh;
     }
+    .wide-screen {
+        @include respond(4k-desktop) {
+            position: relative;
+            left: -25rem;
+            width: 180%;
+        }
+    }
 }
 
 #faq {
@@ -443,14 +443,13 @@ section:not([id*="home"]) {
 }
 
 #contact {
-    padding-bottom: 0.5rem;
-
+    background: #fff;
     .heading {
         padding: 0 5rem;
-        @include respond(phone) {
-            color: #fff;
-        }
         font-size: 2rem;
+        @include respond(phone) {
+            padding: 0 3rem;
+        }
         text-transform: uppercase;
     }
     form {
@@ -460,8 +459,6 @@ section:not([id*="home"]) {
                 margin-top: 2rem !important;
             }
         }
-        background: #fff;
-        border-radius: 3rem;
         padding: 0 5rem;
         .form-group {
             margin: 0;
@@ -511,7 +508,6 @@ section:not([id*="home"]) {
     }
     .footer {
         position: relative;
-        max-width: 53%;
         padding: 1rem 2rem;
         justify-content: space-between;
         background-color: $color-priamry;
@@ -543,11 +539,11 @@ section:not([id*="home"]) {
             }
         }
     }
-    &.contact-us-left {
+    .contact-us-left {
         background-image: url(../images/contact-us.jpg);
         background-size: cover;
         background-position-x: center;
         background-repeat: no-repeat;
-        width: 100%;
+        background-position: right;
     }
 }

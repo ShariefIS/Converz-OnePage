@@ -155,6 +155,38 @@ section:not([id*="home"]) h2 {
   color: #ffffff;
 }
 
+.modal-body {
+  padding: 0 !important;
+}
+
+.modal-body .close {
+  position: absolute;
+  right: -9%;
+  top: -5%;
+  font-size: 3rem;
+  font-weight: lighter !important;
+  color: #f00;
+  opacity: 0.95 !important;
+}
+
+.modal-body .close:hover {
+  color: #f00;
+  opacity: 1.2 !important;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .modal-body .close {
+    right: 0%;
+    top: -7%;
+    font-size: 2.5rem;
+  }
+}
+
+.modal-content {
+  background-color: transparent !important;
+  border: none !important;
+}
+
 #home {
   position: relative;
   top: 4rem;
@@ -162,7 +194,13 @@ section:not([id*="home"]) h2 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 92vh;
+  height: 91vh;
+}
+
+@media only screen and (min-width: 2500px) {
+  #home {
+    height: 95vh;
+  }
 }
 
 #home .heading {
@@ -196,10 +234,15 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .placeholder {
-  height: 71vh;
+  height: 91vh;
   width: 100%;
-  z-index: 10;
   background-color: #1ecfd87e;
+}
+
+@media only screen and (min-width: 2500px) {
+  #home .heading-video .placeholder {
+    height: 95vh;
+  }
 }
 
 #home .heading-video .placeholder .play-button {
@@ -208,32 +251,9 @@ section:not([id*="home"]) h2 {
 }
 
 #home .heading-video .placeholder .play-button img {
-  height: 10rem;
+  height: 6rem;
   -webkit-filter: contrast(0.8);
           filter: contrast(0.8);
-}
-
-#home .heading-video .placeholder span {
-  color: #fff !important;
-  text-shadow: 0px 1.5px #0000;
-}
-
-@media only screen and (max-width: 37.5em) {
-  #home .heading-video .placeholder span {
-    width: 70vw;
-  }
-}
-
-@media only screen and (max-width: 75.5em) and (min-width: 37.5em) {
-  #home .heading-video .placeholder span {
-    width: 40vw;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #home .heading-video .placeholder span {
-    width: 20vw;
-  }
 }
 
 #home .heading-video .explore {
@@ -249,37 +269,6 @@ section:not([id*="home"]) h2 {
   z-index: 20;
   cursor: pointer;
   font-size: 1.3rem;
-}
-
-.modal-body {
-  padding: 0 !important;
-}
-
-.modal-body .close {
-  position: absolute;
-  right: -9%;
-  top: -5%;
-  font-size: 3rem;
-  color: #f00;
-  opacity: 0.95 !important;
-}
-
-.modal-body .close:hover {
-  color: #f00;
-  opacity: 1.2 !important;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .modal-body .close {
-    right: 0%;
-    top: -7%;
-    font-size: 2.5rem;
-  }
-}
-
-.modal-content {
-  background-color: transparent !important;
-  border: none !important;
 }
 
 #dashboard-video {
@@ -420,6 +409,14 @@ section:not([id*="home"]) h2 {
   }
 }
 
+@media only screen and (min-width: 2500px) {
+  #visitor .wide-screen {
+    position: relative;
+    left: -25rem;
+    width: 180%;
+  }
+}
+
 #faq {
   background-color: #f8f9fa !important;
   padding: 2rem 0 !important;
@@ -464,7 +461,7 @@ section:not([id*="home"]) h2 {
 }
 
 #contact {
-  padding-bottom: 0.5rem;
+  background: #fff;
 }
 
 #contact .heading {
@@ -475,13 +472,11 @@ section:not([id*="home"]) h2 {
 
 @media only screen and (max-width: 37.5em) {
   #contact .heading {
-    color: #fff;
+    padding: 0 3rem;
   }
 }
 
 #contact form {
-  background: #fff;
-  border-radius: 3rem;
   padding: 0 5rem;
 }
 
@@ -552,7 +547,6 @@ section:not([id*="home"]) h2 {
 
 #contact .footer {
   position: relative;
-  max-width: 53%;
   padding: 1rem 2rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -599,11 +593,11 @@ section:not([id*="home"]) h2 {
   }
 }
 
-#contact.contact-us-left {
+#contact .contact-us-left {
   background-image: url(../images/contact-us.jpg);
   background-size: cover;
   background-position-x: center;
   background-repeat: no-repeat;
-  width: 100%;
+  background-position: right;
 }
 /*# sourceMappingURL=main.css.map */
