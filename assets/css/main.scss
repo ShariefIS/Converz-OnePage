@@ -89,18 +89,18 @@ ORDER: Base + typography > general layout + grid > page layout > components
             @content;
         }
     }
-    @if $breakpoint == desktop {
-        @media only screen and (min-width: 1024px) {
-            @content;
-        }
-    }
     @if $breakpoint == only-tab-land {
         @media only screen and (max-width: 75.5em) and (min-width: 37.5em) {
             @content;
         }
     }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    }
     @if $breakpoint == big-desktop {
-        @media only screen and (min-width: 112.5em) {
+        @media only screen and (min-width: 1190px) {
             @content;
         }
     }
@@ -215,6 +215,11 @@ section:not([id*="home"]) {
     color: #ffffff;
 }
 
+.modal-xl {
+    @include respond(big-desktop) {
+        max-width: 2200px !important;
+    }
+}
 .modal {
     &-body {
         padding: 0 !important;
@@ -235,6 +240,12 @@ section:not([id*="home"]) {
                 top: -7%;
                 font-size: 2.5rem;
             }
+            @include respond(big-desktop) {
+                right: 2%;
+            }
+            @include respond(4k-desktop) {
+                right: -4%;
+            }
         }
     }
     &-content {
@@ -242,6 +253,22 @@ section:not([id*="home"]) {
         border: none !important;
     }
 }
+
+#dashboard-video {
+    height: 88vh;
+    width: 110%;
+    left: -5%;
+    position: relative;
+    @include respond(big-desktop) {
+        left: 0%;
+        width: 95%;
+    }
+    @include respond(4k-desktop) {
+        left: 0%;
+        width: 100%;
+    }
+}
+
 #home {
     position: relative;
     top: 4rem;
@@ -301,13 +328,6 @@ section:not([id*="home"]) {
             }
         }
     }
-}
-
-#dashboard-video {
-    height: 88vh;
-    width: 110%;
-    left: -5%;
-    position: relative;
 }
 
 #features {

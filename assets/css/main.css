@@ -155,6 +155,12 @@ section:not([id*="home"]) h2 {
   color: #ffffff;
 }
 
+@media only screen and (min-width: 1190px) {
+  .modal-xl {
+    max-width: 2200px !important;
+  }
+}
+
 .modal-body {
   padding: 0 !important;
 }
@@ -182,9 +188,42 @@ section:not([id*="home"]) h2 {
   }
 }
 
+@media only screen and (min-width: 1190px) {
+  .modal-body .close {
+    right: 2%;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  .modal-body .close {
+    right: -4%;
+  }
+}
+
 .modal-content {
   background-color: transparent !important;
   border: none !important;
+}
+
+#dashboard-video {
+  height: 88vh;
+  width: 110%;
+  left: -5%;
+  position: relative;
+}
+
+@media only screen and (min-width: 1190px) {
+  #dashboard-video {
+    left: 0%;
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  #dashboard-video {
+    left: 0%;
+    width: 100%;
+  }
 }
 
 #home {
@@ -269,13 +308,6 @@ section:not([id*="home"]) h2 {
   z-index: 20;
   cursor: pointer;
   font-size: 1.3rem;
-}
-
-#dashboard-video {
-  height: 88vh;
-  width: 110%;
-  left: -5%;
-  position: relative;
 }
 
 #features #feature-fade {
