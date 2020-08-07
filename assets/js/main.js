@@ -15,7 +15,7 @@ window.addEventListener("scroll", event => {
     let fromTop = window.scrollY;
 
     mainNavLinks.forEach(link => {
-        let section = document.getElementById(link.hash.substr(1, link.hash.length));
+        let section = document.getElementById(link.ariaLabel);
 
         if (
             section.offsetTop - 90 <= fromTop &&
