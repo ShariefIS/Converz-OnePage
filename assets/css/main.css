@@ -183,7 +183,7 @@ section:not([id*="home"]) h2 {
 @media only screen and (max-width: 37.5em) {
   .modal-body .close {
     right: 0%;
-    top: -7%;
+    top: -3%;
     font-size: 2.5rem;
   }
 }
@@ -210,6 +210,14 @@ section:not([id*="home"]) h2 {
   width: 110%;
   left: -5%;
   position: relative;
+}
+
+@media only screen and (max-width: 37.5em) {
+  #dashboard-video {
+    width: 100%;
+    left: 0;
+    top: 25px;
+  }
 }
 
 @media only screen and (min-width: 1190px) {

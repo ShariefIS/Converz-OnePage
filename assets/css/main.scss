@@ -237,7 +237,7 @@ section:not([id*="home"]) {
             }
             @include respond(phone) {
                 right: 0%;
-                top: -7%;
+                top: -3%;
                 font-size: 2.5rem;
             }
             @include respond(big-desktop) {
@@ -259,6 +259,11 @@ section:not([id*="home"]) {
     width: 110%;
     left: -5%;
     position: relative;
+    @include respond(phone) {
+        width: 100%;
+        left: 0;
+        top: 25px;
+    }
     @include respond(big-desktop) {
         left: 0%;
         width: 95%;
