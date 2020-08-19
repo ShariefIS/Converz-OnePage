@@ -480,6 +480,15 @@ section:not([id*="home"]) {
         @include respond(phone) {
             padding: 0 3rem;
         }
+        @include respond(only-tab-land) {
+            padding-left: 7%;
+        }
+        @include respond(big-desktop) {
+            padding-left: 20%;
+        }
+        @include respond(4k-desktop) {
+            padding-left: 48%;
+        }
         text-transform: uppercase;
     }
     form {
@@ -488,6 +497,15 @@ section:not([id*="home"]) {
             .form-email {
                 margin-top: 2rem !important;
             }
+        }
+        @include respond(only-tab-land) {
+            padding-left: 7%;
+        }
+        @include respond(big-desktop) {
+            padding-left: 20%;
+        }
+        @include respond(4k-desktop) {
+            padding-left: 48%;
         }
         @media only screen and (max-width: 321px) {
             padding: 0;
