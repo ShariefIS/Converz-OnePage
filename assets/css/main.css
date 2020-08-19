@@ -514,7 +514,7 @@ section:not([id*="home"]) h2 {
 
 @media only screen and (max-width: 37.5em) {
   #contacts .heading {
-    padding: 0 3rem;
+    padding: 0 1rem;
   }
 }
 
@@ -542,7 +542,7 @@ section:not([id*="home"]) h2 {
 
 @media only screen and (max-width: 37.5em) {
   #contacts form {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
   #contacts form .form-email {
     margin-top: 2rem !important;

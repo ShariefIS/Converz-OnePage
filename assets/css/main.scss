@@ -478,7 +478,7 @@ section:not([id*="home"]) {
         padding: 0 5rem;
         font-size: 2rem;
         @include respond(phone) {
-            padding: 0 3rem;
+            padding: 0 1rem;
         }
         @include respond(only-tab-land) {
             padding-left: 7%;
@@ -493,7 +493,7 @@ section:not([id*="home"]) {
     }
     form {
         @include respond(phone) {
-            padding: 0 2rem;
+            padding: 0 1rem;
             .form-email {
                 margin-top: 2rem !important;
             }
